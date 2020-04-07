@@ -8,7 +8,7 @@ function App() {
   return (
     <Wrapper>
     <Title>Employee Directory</Title>
-    <SearchResultContainer />)
+    <SearchResultContainer />
     </Wrapper>
     )
 }

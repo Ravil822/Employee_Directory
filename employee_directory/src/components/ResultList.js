@@ -1,23 +1,24 @@
 import React from "react";
+import "./ResultList.css"
 
 function ResultList(props) {
   return (
     <ul className="list-group">
-      {props.results.map(result => (
+      {props.results.filter(user => user.name.first.includes(props.searchtext)).map(user => (
         <div className="card">
         <div className="img-container">
-          <img alt={props.name} src={props.image} />
+          <img alt={user.name} src={user.picture.medium} />
         </div>
         <div className="content">
           <ul>
             <li>
-              <strong>Name:</strong> {props.name}
+              <strong>Name:</strong> {user.name.first} {user.name.last}
             </li>
             <li>
-              <strong>Occupation:</strong> {props.occupation}
+            <strong>Gender:</strong> {user.gender}
             </li>
             <li>
-              <strong>Location:</strong> {props.location}
+              <strong>Location:</strong> {user.location.state}
             </li>
           </ul>
         </div>
