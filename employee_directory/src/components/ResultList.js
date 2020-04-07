@@ -4,10 +4,10 @@ import "./ResultList.css"
 function ResultList(props) {
   return (
     <ul className="list-group">
-      {props.results.filter(user => user.name.first.includes(props.searchtext)).map(user => (
+      {props.results.filter(user => user.name.first.toLowerCase().includes(props.searchtext.toLowerCase())).map(user => (
         <div className="card">
         <div className="img-container">
-          <img alt={user.name} src={user.picture.medium} />
+          <img alt={user.name} src={user.picture.large} />
         </div>
         <div className="content">
           <ul>
