@@ -11,12 +11,12 @@ class SearchResultContainer extends Component {
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchUser();
+    this.searchUser()
   }
 
-  searchUser= () => {
+  searchUser = () => {
     API.search()
-      .then(res =>{
+      .then(res => {
         console.log(res.data)
         this.setState({ results: res.data.results })
       })
@@ -46,7 +46,7 @@ class SearchResultContainer extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <ResultList results={this.state.results} searchtext = {
+        <ResultList results={this.state.results} searchtext={
           this.state.search
         } />
       </div>
